@@ -58,6 +58,14 @@
        data-bind="click: function() {openTab('#turnto_qa')}, text: reviewsData().comments + ' Buyers Comments'"></a>
 <!-- /ko -->
 
+<!-- ko if: reviewsData().questions === 0 && qaTeaserEnabled === "true" && qaEnabled === "true" -->
+    <!-- ko if: (reviewsTeaserEnabled === "true" && reviewsEnabled === "true") || (commentsTeaserEnabled === "true" && reviewsData().comments > 0 && commentsEnabled === "true") -->
+        <span> | </span>
+    <!-- /ko -->
+    <button class="TTteaser__read-comments"
+       data-bind="click: function() {openTab('#turnto_qa')}">Ask a Question</button>
+<!-- /ko -->
+
 <!-- ko if: reviewsData().questions > 0 && qaTeaserEnabled === "true" && qaEnabled === "true" -->
     <!-- ko if: (reviewsTeaserEnabled === "true" && reviewsEnabled === "true") || (commentsTeaserEnabled === "true" && reviewsData().comments > 0 && commentsEnabled === "true") -->
         <span> | </span>
